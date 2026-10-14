@@ -1,0 +1,16 @@
+Answer1
+Key 1 and 2 are: 6 and 25
+The bounded inorder traversal is:
+Key: 7
+Value: Charlie Davis
+Key: 11
+Value: Diana Sled
+Key: 13
+Value: Charlie Jones
+Key: 17
+Value: Eve Davis
+Key: 19
+Value: Eve Sled
+Key: 23
+Value: Charlie Brown
+END VALUE
