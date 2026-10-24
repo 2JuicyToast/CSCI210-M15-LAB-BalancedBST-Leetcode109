@@ -160,7 +160,22 @@ public class BinarySearchTree<E> extends LinkedBinaryTree<E> {
      * Rebalances the current binary search tree object using LeetCode 109 logic.
      */
     public void rebalanceTreeL109() {
+        if (isEmpty() || root == null) {
+            return;
+        }
+        ArrayList<E> elements = UtilityMethodsBinaryTreeBook.generateArrayListFromBinaryTree(this);
+        this.root = buildBalancedBST(elements, 0, elements.size() - 1, null);
     }
 
+    private Node<E> buildBalancedBST(ArrayList<E> elements, int start, int end, Node<E> parent) {
+        if (start > end) {
+            return null;
+        }
+        int mid = start + (end - start) / 2;
+        Node<E> node = createNode(elements.get(mid), parent, null, null);
+        node.setLeft(buildBalancedBST(elements, start, mid - 1, node));
+        node.setRight(buildBalancedBST(elements, mid + 1, end, node));
+        return node;
+    }
 
 }
